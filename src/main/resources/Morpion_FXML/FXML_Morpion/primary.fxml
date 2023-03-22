@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="561.0" prefWidth="396.0" spacing="20.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Morpion_FXML.FXML_Morpion.PrimaryController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MORPION" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <FlowPane maxHeight="150.0" maxWidth="152.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
+         <children>
+            <Button id="1" fx:id="button1" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="2" fx:id="button2" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="3" fx:id="button3" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="4" fx:id="button4" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="5" fx:id="button5" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="6" fx:id="button6" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="7" fx:id="button7" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="8" fx:id="button8" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="9" fx:id="button9" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+         </children>
+      </FlowPane>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scores" textAlignment="CENTER" wrappingWidth="64.88824462890625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <HBox alignment="TOP_CENTER" prefHeight="81.0" prefWidth="356.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <Label fx:id="winnerText" prefHeight="58.0" prefWidth="310.0" />
+         </children></HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="360.0" spacing="50.0">
+         <children>
+            <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#btnPlayer" style="-fx-background-color: yellow;" text="Vs Joueur" />
+            <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#btnEntity" style="-fx-background-color: yellow;" text="Vs Ordi" />
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#btnSave" style="-fx-background-color: lightgreen;" text="Sauvegarder" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
