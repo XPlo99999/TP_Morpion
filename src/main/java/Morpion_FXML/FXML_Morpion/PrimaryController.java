@@ -2,6 +2,10 @@ package Morpion_FXML.FXML_Morpion;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -89,7 +93,12 @@ public class PrimaryController implements Initializable {
 	     button.setOnMouseClicked(mouseEvent -> {
 	         setPlayerSymbol(button);
 	         button.setDisable(true);
-	         checkIfGameIsOver();
+	         try {
+				checkIfGameIsOver();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	     });
 	 }
 	 
@@ -103,7 +112,7 @@ public class PrimaryController implements Initializable {
 	     }
 	 }
 	 
-	 public void checkIfGameIsOver(){
+	 public void checkIfGameIsOver() throws SQLException{
 	        for (int a = 0; a < 8; a++) {
 	        	String result;
 	            String line = switch (a) {
@@ -144,5 +153,31 @@ public class PrimaryController implements Initializable {
 		      }
 		      
 		  }
-	 }            
+	        
+	        try {
+	            Class.forName("com.mysql.cj.jdbc.Driver");
+	            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-morpion","root","");
+	            System.out.println("Connecter");
+	            String sql ="INSERT INTO scores(name)"+"VALUES('Match nul')";
+	            PreparedStatement pStatement=null;
+	            
+	            
+                try {
+                	
+                pStatement=con.prepareStatement(sql);
+                pStatement.executeUpdate();
+                
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    System.out.println("Erreur");
+                }
+                
+                con.close();
+
+	        } catch (ClassNotFoundException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	            System.out.println("Erreur");
+	        }
+	 }             
 }          
